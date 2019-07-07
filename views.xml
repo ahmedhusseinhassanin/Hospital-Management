@@ -1,0 +1,1397 @@
+<odoo>
+  <data>
+  <!-- Hosptal information here -->
+
+  <!-- Hosptal information here Form View -->
+
+    <record model="ir.ui.view" id="hospital_information_form_view">
+            <field name="name">hospital_information.form</field>
+            <field name="model">hospital.information</field>
+            <field name="arch" type="xml">
+                <form string="Hospital information Form">
+
+                    <sheet>
+                    <field name="image" widget="image" style="width:40px;height:40px;" />   
+                        <group>
+                                                     
+                        <group>                             
+                            <field name="name"/>                            
+                            <field name="Type"/>                                                       
+                            <field name="website"/>
+                            <field name="phone"/>
+                            <field name="mobile"/> 
+                        </group>
+                         <group>                          
+                            <field name="fax"/>
+                            <field name="email"/>                           
+                            <field name="description"/>
+                            <field name="address"/>
+                            <field name="street"/>
+                            <field name="city"/>
+                         </group>
+                         
+                            <field name="extra_information"/>
+                         
+                         </group>
+                                                    
+                      
+                       
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Hosptal information here Tree View -->
+
+
+        <record model="ir.ui.view" id="hospoital_information_tree_view">
+            <field name="name">hospital_information.tree</field>
+            <field name="model">hospital.information</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital information Tree" >
+                    <field name="name"/>  
+                    <field name="phone"/>
+                    <field name="city"/> 
+                    <field name="Type"/>
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Hosptal information here Search View -->
+
+
+        <record model="ir.ui.view" id="hospital_information_search_view">
+            <field name="name">hospital_information.search</field>
+            <field name="model">hospital.information</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/> 
+                    <field name="city"/> 
+                    <field name="Type"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Hosptal information -->
+
+        <record model="ir.ui.view" id="Hosptal_information_kanban_view">
+            <field name="name">Hosptal informationl</field>
+            <field name="model">hospital.information</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                  <li><field name="name"/></li>
+                                  <li><field name="Type"/></li>
+                                  <li><field name="phone"/></li>
+                                  <li><field name="city"/></li>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="hospital_information_list_action">
+            <field name="name">Hospital information</field>
+            <field name="res_model">hospital.information</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <strong class="oe_view_nocontent_create">Create The First Hospital</strong>
+            </field>
+        </record>
+
+
+        <!-- Building Information here  -->
+
+        <!-- Building Information here Form View -->
+
+
+        <record model="ir.ui.view" id="building_information_form_view">
+            <field name="name">hospital.building.form</field>
+            <field name="model">hospital.building</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Building Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="hospital_name"/>                                
+                            <field name="name"/> 
+                                                      
+                            <field name="floors"/>                                                       
+                            <field name="code"/>
+                            <field name="mobile"/>
+                            <field name="extra_information"/>                                                     
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Building information here Tree View -->
+
+
+        <record model="ir.ui.view" id="building_information_tree_view">
+            <field name="name">building_information.tree</field>
+            <field name="model">hospital.building</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital Building Tree" >
+                    <field name="name"/>
+                    <field name="hospital_name"/>     
+                    <field name="mobile"/>
+                    <field name="floors"/>
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Building information here Search View -->
+
+
+        <record model="ir.ui.view" id="building_information_search_view">
+            <field name="name">building_information.search</field>
+            <field name="model">hospital.building</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/> 
+                    <field name="hospital_name"/>                                
+                    <field name="floors"/>                                                       
+                    <field name="code"/>
+                    <field name="mobile"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Building information -->
+
+        <record model="ir.ui.view" id="Building_information_kanban_view">
+            <field name="name">Building information</field>
+            <field name="model">hospital.building</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/> 
+                                  <field name="hospital_name"/>                                
+                                  <field name="floors"/>                                                       
+                                  <field name="code"/>
+                                  <field name="mobile"/>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="Building_information_list_action">
+            <field name="name">Building information</field>
+            <field name="res_model">hospital.building</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Building</strong>
+            </field>
+        </record>
+
+
+        <!-- Hospital Rooms here -->
+
+        <!-- Hospital Rooms here Form View -->
+
+    <record model="ir.ui.view" id="hospital_rooms_form_view">
+            <field name="name">hospital_Rooms.form</field>
+            <field name="model">hospital.rooms</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Rooms Form">
+
+                    <sheet>
+                        <group>                             
+                            <field name="hospital_name"/>                                                       
+                            <field name="building_name"/>                       
+                            <field name="name"/>                            
+                            
+                            <field name="floor_number"/>
+                            <field name="beds_number"/>                            
+                            <field name="extra_information"/>
+                                                     
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Hospital Rooms here Tree View -->
+
+
+        <record model="ir.ui.view" id="hospital_rooms_tree_view">
+            <field name="name">hospital_rooms.tree</field>
+            <field name="model">hospital.rooms</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital Rooms Tree" >
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    <field name="floor_number"/>
+                    <field name="beds_number"/> 
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Hospital Rooms here Search View -->
+
+
+        <record model="ir.ui.view" id="hospital_rooms_search_view">
+            <field name="name">hospital_rooms.search</field>
+            <field name="model">hospital.rooms</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    <field name="floor_number"/>
+                    <field name="beds_number"/> 
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Hospital  Rooms -->
+
+        <record model="ir.ui.view" id="Hospital_rooms_kanban_view">
+            <field name="name">Hosptal rooms</field>
+            <field name="model">hospital.rooms</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                  <li><field name="name"/></li>
+                                  <li><field name="hospital_name"/> ></li>
+                                  <li><field name="building_name"/></li>
+                                  <li><field name="floor_number"/></li>
+                                  <li><field name="beds_number"/> </li>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="hospital_rooms_list_action">
+            <field name="name">Hospital Rooms</field>
+            <field name="res_model">hospital.rooms</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <strong class="oe_view_nocontent_create">Create The First Room</strong>
+            </field>
+        </record>
+
+
+        <!-- Hospital Operation Rooms here -->
+
+        <!-- Hospital Operation Rooms here Form View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_form_view">
+            <field name="name">hospital_operation_Rooms.form</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Operation Rooms Form">
+
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>                             
+                            <field name="hospital_name"/>                                                                                   <field name="building_name"/>                                                                                                          
+                            <field name="extra_information"/>
+                                                    
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Hospital Rooms here Tree View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_tree_view">
+            <field name="name">hospital_operation_rooms.tree</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital Operation Rooms Tree" >
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    
+                    
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Hospital operations Rooms here Search View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_search_view">
+            <field name="name">hospital_operaion_rooms.search</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    
+                    
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Hospital  Rooms -->
+
+        <record model="ir.ui.view" id="Hospital_operation_rooms_kanban_view">
+            <field name="name">Hospital Operation Rooms</field>
+            <field name="model">operation.rooms</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                  <li><field name="name"/></li>
+                                  <li><field name="hospital_name"/> ></li>
+                                  <li><field name="building_name"/></li>
+                                  
+                                  
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="hospital_operation_rooms_list_action">
+            <field name="name">Hospital Rooms</field>
+            <field name="res_model">operation.rooms</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <strong class="oe_view_nocontent_create">Create The First Operation Room</strong>
+            </field>
+        </record>
+        
+
+
+        <!-- beds Information here  -->
+
+        <!-- Beds Information here Form View -->
+
+
+        <record model="ir.ui.view" id="beds_information_form_view">
+            <field name="name">hospital.beds.form</field>
+            <field name="model">hospital.beds</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Beds Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="hospital_name"/>
+                            <field name="building_name"/>
+                            <field name="room_name"/>
+                            <field name="phone"/>
+                            <field name="price"/> 
+                            <field name="extra_information"/>                                                   
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Beds information here Tree View -->
+
+
+        <record model="ir.ui.view" id="beds_information_tree_view">
+            <field name="name">beds_information.tree</field>
+            <field name="model">hospital.beds</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital beds Tree" >
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="room_name"/>
+                     <field name="phone"/>
+                     <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Beds information here Search View -->
+
+
+        <record model="ir.ui.view" id="beds_information_search_view">
+            <field name="name">beds_information.search</field>
+            <field name="model">hospital.beds</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="room_name"/>
+                     <field name="phone"/>
+                     <field name="price"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Beds information -->
+
+        <record model="ir.ui.view" id="Beds_information_kanban_view">
+            <field name="name">Beds information</field>
+            <field name="model">hospital.beds</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="hospital_name"/>
+                                  <field name="building_name"/>
+                                  <field name="room_name"/>
+                                  <field name="phone"/>
+                                  <field name="price"/>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="Beds_list_action">
+            <field name="name">Beds_Information</field>
+            <field name="res_model">hospital.beds</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Bed</strong>
+            </field>
+        </record>
+
+        <!-- Hospital Operation Rooms here -->
+
+        <!-- Hospital Operation Rooms here Form View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_form_view">
+            <field name="name">hospital_operation_Rooms.form</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Operation Rooms Form">
+
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>                             
+                            <field name="hospital_name"/>                                                                                   <field name="building_name"/>                                                                                                          
+                            <field name="extra_information"/>
+                                                    
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Hospital Rooms here Tree View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_tree_view">
+            <field name="name">hospital_operation_rooms.tree</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <tree string="Hospoital Operation Rooms Tree" >
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    
+                    
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Hospital operations Rooms here Search View -->
+
+
+        <record model="ir.ui.view" id="hospital_operation_rooms_search_view">
+            <field name="name">hospital_operaion_rooms.search</field>
+            <field name="model">operation.rooms</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>                            
+                    <field name="hospital_name"/>                                                       
+                    <field name="building_name"/>
+                    
+                    
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Hospital  Rooms -->
+
+        <record model="ir.ui.view" id="Hospital_operation_rooms_kanban_view">
+            <field name="name">Hospital Operation Rooms</field>
+            <field name="model">operation.rooms</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                  <li><field name="name"/></li>
+                                  <li><field name="hospital_name"/> ></li>
+                                  <li><field name="building_name"/></li>
+                                  
+                                  
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="hospital_operation_rooms_list_action">
+            <field name="name">Hospital Rooms</field>
+            <field name="res_model">operation.rooms</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <strong class="oe_view_nocontent_create">Create The First Operation Room</strong>
+            </field>
+        </record>
+        
+
+
+        <!-- Lab Test  Reservation here  -->
+
+        <!-- Lab Test Reservation here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_test_reservation_form_view">
+            <field name="name">Lab Test Reservation.form</field>
+            <field name="model">hospital.test</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Test Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="hospital_name"/>
+                            <field name="building_name"/>
+                            <field name="floor_number"/>
+                            <field name="devices"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Test information here Tree View -->
+
+
+        <record model="ir.ui.view" id="lab_test_information_tree_view">
+            <field name="name">lab test information.tree</field>
+            <field name="model">hospital.test</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Test Information Tree" >
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="floor_number"/>
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Test information here Search View -->
+
+
+        <record model="ir.ui.view" id="lab_test_information_search_view">
+            <field name="name">lab test information.search</field>
+            <field name="model">hospital.test</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="floor_number"/>
+                     <field name="devices"/>
+                     <field name="extra_information"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Test information -->
+
+        <record model="ir.ui.view" id="lab_test_information_kanban_view">
+            <field name="name">Lab Test information</field>
+            <field name="model">hospital.test</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="hospital_name"/>
+                                  <field name="building_name"/>
+                                  <field name="floor_number"/>
+                                  <field name="devices"/>
+                                  <field name="extra_information"/>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="lab_test_information_list_action">
+            <field name="name">Lab Test Information</field>
+            <field name="res_model">hospital.test</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Test Information </strong>
+            </field>
+        </record>
+
+       
+
+        <!-- Lab Tests Reservation  here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_tests_reservation_form_view">
+            <field name="name">hospital test Reservation.form</field>
+            <field name="model">test.reservation</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Tests Reservation Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="age"/>
+                            <field name="city"/>
+                            <field name="gender"/>
+                            <field name="phone"/>
+                            <field name="Type"/>
+                            <field name="price"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Test Reservation here Tree View -->
+
+
+        <record model="ir.ui.view" id="test_reservation_tree_view">
+            <field name="name">test_reservation.tree</field>
+            <field name="model">test.reservation</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Tests Reservation Tree" >
+
+
+                     <field name="name"/>                                 
+                     <field name="Type"/>
+                     <field name="price"/>
+                     
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Tests Reservation here Search View -->
+
+
+        <record model="ir.ui.view" id="test_reservation_search_view">
+            <field name="name">tests_reservation.search</field>
+            <field name="model">test.reservation</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="Type"/>
+                     <field name="price"/>
+                     
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Tests Reservation -->
+
+        <record model="ir.ui.view" id="tests_reservation_kanban_view">
+            <field name="name">Lab Tests Reservation</field>
+            <field name="model">test.reservation</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="Type"/>
+                                  <field name="price"/>
+                                 
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="test_reservation_list_action">
+            <field name="name">Lab_Test_Reservation</field>
+            <field name="res_model">test.reservation</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Test Reservation </strong>
+            </field>
+        </record>
+
+        <!-- Lab Tests Available Information here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_test_available_form_view">
+            <field name="name">hospital.tests.form</field>
+            <field name="model">hospital.tests</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Tests Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="normal_range"/>
+                            <field name="test_price"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Test Available here Tree View -->
+
+
+        <record model="ir.ui.view" id="lab_test_available_tree_view">
+            <field name="name">lab_tests_information.tree</field>
+            <field name="model">hospital.tests</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Tests Tree" >
+                     <field name="name"/>                                 
+                     <field name="normal_range"/>
+                     <field name="test_price"/>
+                     
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Tests Available here Search View -->
+
+
+        <record model="ir.ui.view" id="lab_tests_information_search_view">
+            <field name="name">lab_test_available.search</field>
+            <field name="model">hospital.tests</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="normal_range"/>
+                     <field name="test_price"/>
+                     
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Tests Available -->
+
+        <record model="ir.ui.view" id="lab_test_available_kanban_view">
+            <field name="name">Lab Tests information</field>
+            <field name="model">hospital.tests</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="normal_range"/>
+                                  <field name="test_price"/>
+                                 
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="lab_test_available_list_action">
+            <field name="name">Lab_Tests_Information</field>
+            <field name="res_model">hospital.tests</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Test Available </strong>
+            </field>
+        </record>
+
+        <!-- Lab Image Information here  -->
+
+        <!-- Lab Image Information here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_image_information_form_view">
+            <field name="name">image_information.form</field>
+            <field name="model">image.information</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Image Information Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="hospital_name"/>
+                            <field name="building_name"/>
+                            <field name="floor_number"/>
+                            <field name="devices"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Image information here Tree View -->
+
+
+        <record model="ir.ui.view" id="lab_image_information_tree_view">
+            <field name="name">lab_image_information.tree</field>
+            <field name="model">image.information</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Image information Tree" >
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="floor_number"/>
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Image information here Search View -->
+
+
+        <record model="ir.ui.view" id="lab_image_information_search_view">
+            <field name="name">lab_image_information.search</field>
+            <field name="model">image.information</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="hospital_name"/>
+                     <field name="building_name"/>
+                     <field name="floor_number"/>
+                     <field name="devices"/>
+                     <field name="extra_information"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Image information -->
+
+        <record model="ir.ui.view" id="lab_image_information_kanban_view">
+            <field name="name">Lab Image information</field>
+            <field name="model">image.information</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="hospital_name"/>
+                                  <field name="building_name"/>
+                                  <field name="floor_number"/>
+                                  <field name="devices"/>
+                                  <field name="extra_information"/>
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="lab_image_information_list_action">
+            <field name="name">Lab_Image_Information</field>
+            <field name="res_model">image.information</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Image Information</strong>
+            </field>
+        </record>
+
+        <!-- Lab Image Available here  -->
+
+        <!-- Lab Image  here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_images_available_form_view">
+            <field name="name">image_available.form</field>
+            <field name="model">image.available</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Image Available Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="image_price"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Image available here Tree View -->
+
+
+        <record model="ir.ui.view" id="lab_images_available_tree_view">
+            <field name="name">lab_images_available.tree</field>
+            <field name="model">image.available</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Images Available Tree" >
+                     <field name="name"/>                                 
+                     <field name="image_price"/>
+                    
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Image available here Search View -->
+
+
+        <record model="ir.ui.view" id="lab_images_available_search_view">
+            <field name="name">lab_images_available.search</field>
+            <field name="model">image.available</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="image_price"/>
+                     
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Image available -->
+
+        <record model="ir.ui.view" id="lab_images_available_kanban_view">
+            <field name="name">Lab Images Available</field>
+            <field name="model">image.available</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="image_price"/>
+                                  
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="lab_images_available_list_action">
+            <field name="name">Lab Images Available</field>
+            <field name="res_model">image.available</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Image Available </strong>
+            </field>
+        </record>
+
+
+         <!-- Lab Image Reservation  here Form View -->
+
+
+        <record model="ir.ui.view" id="lab_image_reservation_form_view">
+            <field name="name">image_Reservation.form</field>
+            <field name="model">image.reservation</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Images Reservation Form">
+
+                    <sheet>
+                        <group>                             
+
+                            <field name="name"/>                                 
+                            <field name="age"/>
+                            <field name="city"/>
+                            <field name="gender"/>
+                            <field name="phone"/>
+                            <field name="Type"/>
+                            <field name="price"/>
+                            <field name="extra_information"/>
+                                                                               
+                                                                         
+                      
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Lab Images Reservation here Tree View -->
+
+
+        <record model="ir.ui.view" id="image_reservation_tree_view">
+            <field name="name">image_reservation.tree</field>
+            <field name="model">image.reservation</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Images Reservation Tree" >
+
+
+                     <field name="name"/>                                 
+                     <field name="Type"/>
+                     <field name="price"/>
+                     
+                     
+                   
+                </tree>
+            </field>
+        </record>
+
+
+      <!-- Lab Images Reservation here Search View -->
+
+
+        <record model="ir.ui.view" id="image_reservation_search_view">
+            <field name="name">image_reservation.search</field>
+            <field name="model">image.reservation</field>
+            <field name="arch" type="xml">
+                <search>
+                     <field name="name"/>                                 
+                     <field name="Type"/>
+                     <field name="price"/>
+                     
+                </search>
+            </field>
+        </record>
+
+
+        <!-- kanban view in Lab Images Reservation -->
+
+        <record model="ir.ui.view" id="image_reservation_kanban_view">
+            <field name="name">Lab Image Reservation</field>
+            <field name="model">image.reservation</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_resource_vignette">
+                            <div class="oe_resource_image">
+                                <a type="edit"><img t-att-src="kanban_image('object.name', 'photo', record.id.value)" class="oe_resource_picture"/></a>
+                            </div>
+                            <div class="oe_resource_details">
+                                <ul>
+                            <!--Here you have to write the object's field name which you want to display in kanban view -->
+                                     
+                                  <field name="name"/>                                 
+                                  <field name="Type"/>
+                                  <field name="price"/>
+                                 
+                                                                 
+                                </ul>
+                            </div>
+                        </div>                       
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="image_reservation_list_action">
+            <field name="name">Lab Image Reservation</field>
+            <field name="res_model">image.reservation</field>
+            <field name="view_type">form</field>
+             <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+            <strong class="oe_view_nocontent_create"> Create The First Lab Image Reservation </strong>
+            </field>
+        </record>
+
+          
+
+        <!-- menu items test -->
+
+        
+        <menuitem id="reservations_menu" name="Reservations" />
+        <menuitem id="lab_test_menu" name="Lab Test" parent="reservations_menu"/>
+
+        <menuitem id="test_reservation_menu" name="Reservation" parent="lab_test_menu" action="test_reservation_list_action"/> 
+
+        <menuitem id="test_information_menu" name="Information" parent="lab_test_menu" action="lab_test_information_list_action"/> 
+
+        <menuitem id="test_available_menu" name="Available" parent="lab_test_menu" action="lab_test_available_list_action"/> 
+      
+        <!-- lab images here -->
+
+        <menuitem id="lab_image_menu" name="Lab Image" parent="reservations_menu"/>
+
+        <menuitem id="image_reservation_menu" name="Reservation" parent="lab_image_menu" action="image_reservation_list_action"/> 
+
+        <menuitem id="image_information_menu" name="Information" parent="lab_image_menu" action="lab_image_information_list_action"/> 
+
+        <menuitem id="image_available_menu" name="Available" parent="lab_image_menu" action="lab_images_available_list_action"/> 
+    
+        <!-- Hospital Management -->        
+
+        <menuitem id="main_hospital_management_menu" name="Hospital Management"/>
+
+        <menuitem id="hospital_menu" name="Hospital" parent="main_hospital_management_menu"/>
+
+        <menuitem id="hospital_information_menu" name="Hospital Information" parent="hospital_menu"
+                  action="hospital_information_list_action"/>
+
+        <menuitem id="building_information_menu" name="Building" parent="hospital_menu"
+                  action="Building_information_list_action"/>
+
+        <menuitem id="rooms_menu" name="Patients Rooms" parent="hospital_menu"
+                  action="hospital_rooms_list_action"/>
+
+        <menuitem id="beds_menu" name="Beds Management" parent="hospital_menu"
+                  action="Beds_list_action"/>
+        
+        <menuitem id="operation_rooms_menu" name="Operations Rooms" parent="hospital_menu"
+                  action="hospital_operation_rooms_list_action"/>
+
+        <menuitem id="labs_menus" name="Labs" parent="main_hospital_management_menu"/>
+       
+
+        <menuitem id="lab_test_information_menu" name="Lab Test Information" parent="labs_menus" action="lab_test_information_list_action"/> 
+
+        <menuitem id="lab_test_available_menu" name="Lab Test Available" parent="labs_menus" action="lab_test_available_list_action"/> 
+
+        <menuitem id="lab_image_information_menu" name="Lab Image Information" parent="labs_menus" action="lab_image_information_list_action"/> 
+
+        <menuitem id="lab_image_available_menu" name="Lab Image Available" parent="labs_menus" action="lab_images_available_list_action"/> 
+
+        
+
+       
+        
+
+
+    
+       
+    
+        
+
+        
+                  
+       
+    
+    
+  </data>
+</odoo>
